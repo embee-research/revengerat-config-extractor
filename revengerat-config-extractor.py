@@ -11,7 +11,7 @@
     
 
     Some portions of this code were heavily inspired by RussianPanda's WhiteSnakeStealer blog
-
+    https://russianpanda.com/2023/07/04/WhiteSnake-Stealer-Malware-Analysis/
 
    sha256: fa95d5e77fd4fab91662c9b1e460807647acb25769469110b59fb6485b17cc8d
    sha256: 2e0e188d4b837df3c8bbed3227493a9074e668b84a48b9dc81dacc596f23e048
@@ -34,6 +34,7 @@ from dnlib.DotNet.Emit import OpCodes
 def has_config_sequence(method):
     #Obtain target opcode sequence
     #This portion was heavily inspired by the RussianPanda WhiteSnakeStealer Post
+    #https://russianpanda.com/2023/07/04/WhiteSnake-Stealer-Malware-Analysis/
     
     #Opcode Sequence 1
     target_opcode_sequence1 =  [OpCodes.Call,OpCodes.Stfld,OpCodes.Ldarg_0,OpCodes.Ldstr,OpCodes.Ldstr,OpCodes.Ldc_I4_M1,OpCodes.Ldc_I4_0,OpCodes.Call,OpCodes.Stfld,OpCodes.Ldarg_0,OpCodes.Ldstr,OpCodes.Stfld,OpCodes.Ldarg_0,OpCodes.Ldstr,OpCodes.Stfld,OpCodes.Ldarg_0,OpCodes.Ldc_I4_0,OpCodes.Stfld,OpCodes.Ldarg_0,OpCodes.Ldc_I4_0,OpCodes.Stfld,OpCodes.Ret]
